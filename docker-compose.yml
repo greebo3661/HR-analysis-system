@@ -1,0 +1,13 @@
+services:
+  hr-rag-ui:
+    build: .
+    container_name: hr-rag-ui
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./prompts:/app/prompts
+      - ./app/fonts:/app/fonts
+    env_file:
+      - .env
+    restart: unless-stopped
