@@ -87,23 +87,23 @@ git clone https://github.com/greebo3661/HR-analysis-system.git
 cd HR-analysis-system
 2. Создайте .env файл:
 
-bash
+
 cp .env.example .env
 nano .env  # Отредактируйте параметры
 3. Настройте переменные окружения:
 
-text
+
 LLM_MANAGER_URL=http://your-llm-server:8000
 LLM_API_KEY=your-api-key-here
 DATABASE_URL=sqlite:///data/db/hr_analysis.db
 4. Запустите контейнеры:
 
-bash
+
 docker compose build
 docker compose up -d
 5. Откройте в браузере:
 
-text
+
 http://localhost:8501
  Поддерживаемые LLM модели
 Система работает с любыми моделями через OpenAI-compatible API. По умолчанию поддерживаются:
