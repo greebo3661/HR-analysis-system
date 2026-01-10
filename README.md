@@ -26,7 +26,7 @@ AI-powered HR система для автоматизированного ан�
 - **Deployment**: Docker + docker-compose
 
 ##  Архитектура проекта
-
+```
 hr-rag/
 ├── app/
 │ ├── components/ # UI компоненты Streamlit
@@ -68,9 +68,9 @@ hr-rag/
 ├── .env.example # Шаблон переменных окружения
 ├── LICENSE # MIT лицензия
 └── README.md # Документация
+```
 
-
-## 🚀 Быстрый старт
+##  Быстрый старт
 
 ### Требования
 
