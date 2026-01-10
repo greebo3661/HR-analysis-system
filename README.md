@@ -29,36 +29,45 @@ AI-powered HR система для автоматизированного ан�
 
 hr-rag/
 ├── app/
-│ ├── components/ # UI компоненты
-│ │ ├── kanban.py # Kanban доска
-│ │ ├── filters.py # Фильтры и поиск
-│ │ ├── comparison.py # Сравнение кандидатов
+│ ├── components/ # UI компоненты Streamlit
+│ │ ├── kanban.py # Kanban доска с drag-and-drop
+│ │ ├── filters.py # Фильтры и поиск кандидатов
+│ │ ├── comparison.py # Сравнение до 3 кандидатов
 │ │ ├── charts.py # Графики и визуализация
-│ │ ├── comments.py # Система комментариев
-│ │ └── status_manager.py # Управление статусами
-│ ├── services/
-│ │ ├── llm_client.py # Клиент для LLM
-│ │ └── document_parser.py # Парсинг документов
+│ │ ├── comments.py # Комментарии с тегами
+│ │ └── status_manager.py # Управление статусами воронки
+│ │
+│ ├── services/ # Бизнес-логика
+│ │ ├── llm_client.py # Клиент для LLM оркестратора
+│ │ └── document_parser.py # Парсинг PDF/DOCX/TXT
+│ │
 │ ├── db/
-│ │ └── models.py # SQLAlchemy модели
+│ │ └── models.py # SQLAlchemy модели (Vacancy, Match, Comment, StatusHistory)
+│ │
 │ ├── utils/
-│ │ ├── metrics.py # Бизнес-метрики
-│ │ └── search.py # Поиск и фильтрация
+│ │ ├── metrics.py # Расчёт бизнес-метрик и конверсий
+│ │ └── search.py # Поиск и фильтрация данных
+│ │
 │ ├── pages/
-│ │ └── analytics.py # Страница аналитики
-│ ├── fonts/ # Шрифты для PDF
-│ ├── config.py # Конфигурация
-│ ├── pdf_export.py # Генерация PDF
-│ └── streamlit_app.py # Главный файл
+│ │ └── analytics.py # Страница аналитики с графиками
+│ │
+│ ├── fonts/ # DejaVu шрифты для PDF (кириллица)
+│ ├── config.py # Конфигурация моделей и настроек
+│ ├── pdf_export.py # Генерация PDF отчётов
+│ └── streamlit_app.py # Главный файл приложения
+│
 ├── prompts/
 │ ├── system_prompt.txt # Системный промпт для LLM
-│ └── hr_guidelines.txt # HR руководство
-├── data/db/ # База данных (создаётся автоматически)
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-├── .env.example
-└── README.md
+│ └── hr_guidelines.txt # HR руководство по оценке
+│
+├── data/db/ # База SQLite (создаётся автоматически)
+│
+├── docker-compose.yml # Docker конфигурация
+├── Dockerfile # Образ приложения
+├── requirements.txt # Python зависимости
+├── .env.example # Шаблон переменных окружения
+├── LICENSE # MIT лицензия
+└── README.md # Документация
 
 
 ## 🚀 Быстрый старт
